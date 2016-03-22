@@ -5,3 +5,4 @@ deploy:
   provider: heroku
   api_key:
     secure: dd1f5fce-919d-4f53-b5aa-ec413bf7c334
+  app: sparksample
