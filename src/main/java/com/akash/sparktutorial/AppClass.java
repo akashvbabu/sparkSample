@@ -22,6 +22,12 @@ public class AppClass {
         com.rabbitmq.client.Connection connection = factory.newConnection();
         Channel channel = connection.createChannel();
         final String QUEUE_NAME = "hello";
+        
+        // test route for heroku
+        get("/default/:name", (req, res)->{
+            return "Hello "+req.params(":name")+" from heroku";
+        });
+        
         //sample route
         get("/hello/:name", (req, res) -> {
             channel.basicPublish("", QUEUE_NAME, null, "hello world".getBytes()); //test
